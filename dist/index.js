@@ -156,7 +156,7 @@ function deployApp() {
             throw new Error('Environment is required');
         }
         const deploy = yield (0, exec_1.exec)('copilot', [
-            'deploy',
+            'svc deploy',
             '--app',
             app,
             '--env',

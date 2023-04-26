@@ -1,11 +1,11 @@
-import * as core from '@actions/core'
-import * as os from 'os'
+import { chmodSync } from 'fs';
+import * as os from 'os';
 
-import { cacheFile, downloadTool, find } from '@actions/tool-cache'
-import { chmodSync } from 'fs'
-import { exec } from '@actions/exec'
-import { HttpClient } from '@actions/http-client'
-import { BearerCredentialHandler } from '@actions/http-client/auth'
+import * as core from '@actions/core';
+import { exec } from '@actions/exec';
+import { HttpClient } from '@actions/http-client';
+import { BearerCredentialHandler } from '@actions/http-client/auth';
+import { cacheFile, downloadTool, find } from '@actions/tool-cache';
 
 const COPILOT_CLI_TOOL_NAME = 'aws-copilot-cli'
 
@@ -135,7 +135,7 @@ async function deployApp(): Promise<void> {
   }
 
   const deploy = await exec('copilot', [
-    'deploy',
+    'svc deploy',
     '--app',
     app,
     '--env',
